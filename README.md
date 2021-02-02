@@ -54,10 +54,11 @@ http://127.0.0.1:8000/cart/logout_all/
 -this will put the access token to the blacklisttoken in db
 
 
-List Products API
-=================
+List Products API for User w/ Pagination, Search and Sort Algorithm
+=====================================================================
 
 link for GET request:
+
 -need to pass the access token in the request
 
 http://127.0.0.1:8000/cart/store/
@@ -68,6 +69,7 @@ List Products API for Admin w/ Pagination, Search and Sort Algorithm
 =====================================================================
 
 link for GET request:
+
 -need to pass the access token in the request
 
 http://127.0.0.1:8000/cart/admin_store/
@@ -81,6 +83,7 @@ http://127.0.0.1:8000/cart/admin_store/?search=keyboard
 Add Products API for Admin Only
 ================================
 link for POST request:
+
 -need to pass the access token in the request
 
 http://127.0.0.1:8000/cart/admin_store/
@@ -95,6 +98,7 @@ needed parameters in form-data:
 Edit Products API for Admin Only
 ==================================
 link for PUT request:
+
 -need to pass the access token in request
 
 http://127.0.0.1:8000/cart/admin_store/$/
@@ -109,6 +113,7 @@ needed parameters in form-data:
 Delete Products API for Admin Only
 ===================================
 link for DELTE request:
+
 -need to pass the access token in request
 
 http://127.0.0.1:8000/cart/admin_store/$/
@@ -118,6 +123,7 @@ http://127.0.0.1:8000/cart/admin_store/$/
 List Items to the Cart
 ======================
 link for GET request:
+
 -need to pass the access token in request
 
 http://127.0.0.1:8000/cart/order_list
@@ -127,6 +133,7 @@ http://127.0.0.1:8000/cart/order_list
 Adding and Removing Items in the Cart
 =========================
 link for POST request:
+
 -need to pass the access token in request
 
 http://127.0.0.1:8000/cart/update_list/
