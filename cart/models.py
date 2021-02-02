@@ -45,7 +45,7 @@ class Order(models.Model):
         return total
 
     def __str__(self):
-        return str(self.transaction_id)
+        return str(self.id)
 
 
 # Items table per Order transactions

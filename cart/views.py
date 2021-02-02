@@ -83,7 +83,7 @@ class Cart(generics.ListAPIView):
         total = order.get_cart_total
         cart_items = order.get_cart_items
         # creation of JSON data for return purpose
-        z.append({'order':order.transaction_id, 'total_cart_items':cart_items, 'total_price':total})
+        z.append({'order':order.id, 'total_cart_items':cart_items, 'total_price':total})
 
         return JsonResponse(z, safe=False)
 
@@ -103,21 +103,21 @@ class UpdateItem(APIView):
         # getting the order id for adding and removing
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
         # getting the items in the order item table
-        order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
+        orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
 
         # if the action is add we will increment a value in the cart
         if action == 'add':
-            order_item.quantity = (order_item.quantity + 1)
+            orderItem.quantity = (orderItem.quantity + 1)
         # if the action is remove we will decrement a value in the cart
         elif action == 'remove':
-            order_item.quantity = (order_item.quantity - 1)
+            orderItem.quantity = (orderItem.quantity - 1)
 
         # saving the transaction
-        order_item.save()
+        orderItem.save()
 
         # if the item is equal to 0, it will be deleted in the cart
-        if order_item.quantity <= 0:
-            order_item.delete()
+        if orderItem.quantity <= 0:
+            orderItem.delete()
 
         # redirecting in the Cart API to show the updated cart values
         return redirect("cart")
