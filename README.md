@@ -139,7 +139,9 @@ link for POST request:
 http://127.0.0.1:8000/cart/update_list/
 
 needed parameters in form-data:
+
 -product id and the action of request (add for adding to cart and remove for removing to the cart)
+
 -every request is an increment or decrement of 1 in the total items in the cart
 
     "productId": "1",
